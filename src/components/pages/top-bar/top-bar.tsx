@@ -22,6 +22,7 @@ export const TopBar: React.FC<TopBarProps> = ({ className, user }) => {
             <div>
                 <Avatar url={avatar} username={user?.username} />
                 <ConnectButton />
+                <Techs technologies={user?.techs?.technologies} />
             </div>
 
             <div className={styles.userinfo}>
@@ -38,8 +39,6 @@ export const TopBar: React.FC<TopBarProps> = ({ className, user }) => {
                     <span className={styles.members}>Member since 1984</span>
                     <Connections count={user?.followers} />
                 </div>
-
-                <Techs technologies={user?.techs?.technologies} />
             </div>
         </aside>
     );

@@ -11,15 +11,7 @@ const TechStacks = ({ technologies }: TechsProps): JSX.Element => {
     return (
         <>
             <div className={styles.techs}>
-                {technologies!
-                    .slice(0, technologies!.length / 2)
-                    .map((tech, i) => (
-                        <Tech tech={tech} key={tech + i} />
-                    ))}
-            </div>
-            <div className={styles.techs}>
-                {technologies!
-                    .slice(technologies!.length / 2)
+                {technologies
                     .map((tech, i) => (
                         <Tech tech={tech} key={tech + i} />
                     ))}
@@ -31,8 +23,7 @@ const TechStacks = ({ technologies }: TechsProps): JSX.Element => {
 export const Techs = ({ technologies }: TechsProps) => {
     return (
         <div>
-            <p className={styles.title}>Tech Stack</p>
             {technologies ? <TechStacks technologies={technologies} /> : null}
-        </div>
+        </div
     );
 };
