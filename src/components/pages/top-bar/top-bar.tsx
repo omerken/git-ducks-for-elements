@@ -19,17 +19,12 @@ export const TopBar: React.FC<TopBarProps> = ({ className, user }) => {
         'https://static.wixstatic.com/media/610b66_a9c2eb161c8d455cb7b4a4eac122ef84~mv2.jpg'; // avatar-default.jpg (240x240)
     return (
         <aside className={classNames(styles.root, className)}>
-            <Avatar url={avatar} username={user?.username} />
+            <div>
+                <Avatar url={avatar} username={user?.username} />
+                <ConnectButton />
+            </div>
 
             <div className={styles.userinfo}>
-                <div className={styles.names}>
-                    <ConnectButton />
-                    <span className={styles.name}>{user?.name}</span>
-                    <span className={styles.username}>{user?.username}</span>
-                    <span className={styles.members}>Member since 1984</span>
-                    <Connections count={user?.followers} />
-                </div>
-
                 <UserInfo
                     organization={user?.organization}
                     location={user?.location}
@@ -37,6 +32,12 @@ export const TopBar: React.FC<TopBarProps> = ({ className, user }) => {
                     twitter={user?.twitter}
                     url={user?.url}
                 />
+                <div className={styles.names}>
+                    <span className={styles.name}>{user?.name}</span>
+                    <span className={styles.username}>{user?.username}</span>
+                    <span className={styles.members}>Member since 1984</span>
+                    <Connections count={user?.followers} />
+                </div>
 
                 <Techs technologies={user?.techs?.technologies} />
             </div>

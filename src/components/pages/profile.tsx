@@ -20,6 +20,7 @@ export const Profile = ({ className, user }: ContentProps) => {
             <TopBar user={user} />
 
             <main className={styles.content}>
+                <Overview />
                 <LatestActivity
                     children={[
                         {
@@ -60,7 +61,6 @@ export const Profile = ({ className, user }: ContentProps) => {
                         },
                     ]}
                 />
-                <Overview />
             </main>
         </div>
     );
