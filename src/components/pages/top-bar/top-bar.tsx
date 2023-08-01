@@ -3,7 +3,6 @@ import type { ApiUser } from '../../../model/api-user';
 import { UserInfo } from './user-info/user-info';
 import { ConnectButton } from './connect-button/connect-button';
 import { Techs } from '../overview/techs/techs';
-import { Connections } from '../../connections/connections';
 import { Avatar } from './avatar/avatar';
 import classNames from 'classnames';
 import styles from './top-bar.module.scss';
@@ -23,11 +22,10 @@ export const TopBar: React.FC<TopBarProps> = ({ className, user }) => {
 
             <div className={styles.userinfo}>
                 <div className={styles.names}>
-                    <ConnectButton />
                     <span className={styles.name}>{user?.name}</span>
                     <span className={styles.username}>{user?.username}</span>
+                    <ConnectButton />
                     <span className={styles.members}>Member since 1984</span>
-                    <Connections count={user?.followers} />
                 </div>
 
                 <UserInfo

@@ -7,7 +7,7 @@ export interface ConnectionsProps {
     count?: number;
 }
 
-export const Connections = ({ className, count = 0 }: ConnectionsProps) => {
+export const Connections = ({ className, count}: ConnectionsProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Icon name="followers" />
